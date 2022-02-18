@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "482215158647",
+    "firebase_url": "https://mastermind-8677a-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mastermind-8677a",
+    "storage_bucket": "mastermind-8677a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482215158647:android:004ff02c8e5c7d42657772",
+        "android_client_info": {
+          "package_name": "com.example.mastermind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482215158647-s5toas0vunh1lspgagtsd39faqrna9gu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBbfFD1jju18dJmLV1etFXm5T6vyiuteA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482215158647-s5toas0vunh1lspgagtsd39faqrna9gu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "482215158647-auvm798jrvr512e3k0r2k4ihlio1u6vd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mastermind"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

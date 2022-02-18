@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>482215158647-auvm798jrvr512e3k0r2k4ihlio1u6vd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.482215158647-auvm798jrvr512e3k0r2k4ihlio1u6vd</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDsuXZ--095KS_g1wRBgyOoeWEdSeoQ4Ak</string>
+	<key>GCM_SENDER_ID</key>
+	<string>482215158647</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.mastermind</string>
+	<key>PROJECT_ID</key>
+	<string>mastermind-8677a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mastermind-8677a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:482215158647:ios:154bd148933e4d5d657772</string>
+	<key>DATABASE_URL</key>
+	<string>https://mastermind-8677a-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
