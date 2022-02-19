@@ -146,11 +146,12 @@ Future<List> getFriendsLeaderboard() async {
         .collection('leaderboard')
         // .where('user', isEqualTo: user)
         .orderBy('time', descending: false)
-        .limit(6)
         .get()
         .then((QuerySnapshot querySnapshot) {
       for (var doc in querySnapshot.docs) {
-        tmp.add([doc["user"], doc["time"]]);
+        if (tmp.length <= 6) {
+          tmp.add([doc["user"], doc["time"]]);
+        }
       }
     });
 
@@ -195,12 +196,13 @@ Future<List> getUserLeaderboard() async {
         .collection('leaderboard')
         // .where('user', isEqualTo: user)
         .orderBy('time', descending: false)
-        .limit(6)
         .get()
         .then((QuerySnapshot querySnapshot) {
       for (var doc in querySnapshot.docs) {
         if (doc["user"] == user) {
-          scores.add(doc["time"]);
+          if (scores.length <= 6) {
+            scores.add(doc["time"]);
+          }
         }
       }
     });
