@@ -13,6 +13,8 @@ import 'package:mastermind/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 import "dart:math";
 
+import '../widgets/color_chose_box_widget.dart';
+
 class GameStatefulWidget extends StatefulWidget {
   final List<Color> allColors = [
     CustomColors.gcOrange,

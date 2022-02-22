@@ -147,15 +147,20 @@ class _LoginStatefulWidgetState extends State<LoginStatefulWidget> {
                                         );
                                         if (shouldNavigate) {
                                           Route route = MaterialPageRoute(
-                                            builder: (context) =>
-                                                MainView(),
+                                            builder: (context) => MainView(),
                                           );
                                           Navigator.push(
                                             context,
                                             route,
                                           );
                                         } else {
-                                          print("login not successfully");
+                                          const snackBar = SnackBar(
+                                            content: Text(
+                                                "Passwort oder Email falsch"),
+                                          );
+
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(snackBar);
                                         }
                                       }
                                     },
