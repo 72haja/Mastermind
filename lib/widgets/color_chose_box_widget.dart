@@ -5,25 +5,20 @@ import 'package:mastermind/widgets/widgets.dart';
 
 import 'game_button_widget.dart';
 
-class ColorChoseBoxWidget extends StatelessWidget {
+class ColorChoseBoxWidget extends StatefulWidget {
+  List<Color> buttonColors;
+
   ColorChoseBoxWidget({
     Key? key,
+    required this.buttonColors,
   }) : super(key: key);
 
-  final filledBoxShadow = [
-    BoxShadow(
-      color: const Color(0x3C40434D).withOpacity(0.25),
-      blurRadius: 2.0,
-      spreadRadius: 0,
-      offset: const Offset(0, 1),
-    ),
-    BoxShadow(
-      color: const Color(0x3C404326).withOpacity(0.15),
-      blurRadius: 6.0,
-      spreadRadius: 2,
-      offset: const Offset(0, 2),
-    ),
-  ];
+  @override
+  State<ColorChoseBoxWidget> createState() => _ColorChoseBoxWidgetState();
+}
+
+class _ColorChoseBoxWidgetState extends State<ColorChoseBoxWidget> {
+  final colorStack = <String>[];
 
   List<ColorMap> topColorMap = [
     ColorMap("yellow", CustomColors.gcYellow.withOpacity(1)),
@@ -38,6 +33,10 @@ class ColorChoseBoxWidget extends StatelessWidget {
     ColorMap("pink", CustomColors.gcPink.withOpacity(1)),
     ColorMap("purple", CustomColors.gcPurple.withOpacity(1)),
   ];
+
+  bool colorIsInStack(Color color) => widget.buttonColors.map((tmpColor) {
+        return tmpColor.withOpacity(1);
+      }).contains(color.withOpacity(1));
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +64,9 @@ class ColorChoseBoxWidget extends StatelessWidget {
                         size: 30.0,
                         hidden: false,
                         onButtonClicked: () {},
-                        color: colorObj.color,
+                        color: colorIsInStack(colorObj.color)
+                            ? CustomColors.gcEmpty.withOpacity(1)
+                            : colorObj.color,
                       ),
                     ),
                     if (topColorMap.indexOf(colorObj) < 3) const Spacer(),
@@ -84,7 +85,9 @@ class ColorChoseBoxWidget extends StatelessWidget {
                         size: 30.0,
                         hidden: false,
                         onButtonClicked: () {},
-                        color: colorObj.color,
+                        color: colorIsInStack(colorObj.color)
+                            ? CustomColors.gcEmpty.withOpacity(1)
+                            : colorObj.color,
                       ),
                     ),
                     if (bottomColorMap.indexOf(colorObj) < 3) const Spacer(),

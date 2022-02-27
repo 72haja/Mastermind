@@ -231,7 +231,9 @@ class _GameStatefulWidgetState extends State<GameStatefulWidget> {
                       ),
                       const SizedBox(height: 10),
                       Row(children: [
-                        ColorChoseBoxWidget(),
+                        ColorChoseBoxWidget(
+                          buttonColors: _buttonColors,
+                        ),
                       ]),
                     ],
                   )

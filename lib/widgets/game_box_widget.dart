@@ -1,13 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:mastermind/models/fixed_btn_model.dart';
 import 'package:mastermind/theme/colors.dart';
 import 'package:mastermind/widgets/fixed_color_button_widget.dart';
-import 'package:mastermind/widgets/widgets.dart';
-
-import 'color_chose_box_widget.dart';
-import 'color_chose_widget.dart';
 import 'game_button_widget.dart';
 
 class GameBoxWidget extends StatefulWidget {
@@ -17,7 +11,7 @@ class GameBoxWidget extends StatefulWidget {
   Function(String) callback;
 
   void setButtonColor(int index, String color) {
-    var tmpColor;
+    Color tmpColor;
     switch (color) {
       case "yellow":
         tmpColor = CustomColors.gcYellow;
@@ -49,6 +43,8 @@ class GameBoxWidget extends StatefulWidget {
     buttonColors[index] = tmpColor;
     callback("CHANGE");
   }
+
+  get getButtonColors => buttonColors;
 
   GameBoxWidget({
     Key? key,
@@ -114,8 +110,8 @@ class GameBox extends State<GameBoxWidget> {
                             "Gewonnen",
                             style: TextStyle(
                                 fontSize: 40,
-                                color: CustomColors.secondaryDark
-                                    .withOpacity(1)),
+                                color:
+                                    CustomColors.secondaryDark.withOpacity(1)),
                           ),
                         ),
                       )
@@ -136,35 +132,27 @@ class GameBox extends State<GameBoxWidget> {
                                       return GameButtonWidget(
                                         hidden: false,
                                         onButtonClicked: () {
-                                          if (_shownButtons[
-                                              index]) {
-                                            _shownButtons[
-                                                index] = false;
+                                          if (_shownButtons[index]) {
+                                            _shownButtons[index] = false;
                                           } else {
-                                            _shownButtons =
-                                                List.filled(
-                                                    _shownButtons
-                                                        .length,
-                                                    false,
-                                                    growable:
-                                                        true);
+                                            _shownButtons = List.filled(
+                                              _shownButtons.length,
+                                              false,
+                                              growable: true,
+                                            );
 
-                                            _shownButtons[
-                                                index] = true;
+                                            _shownButtons[index] = true;
                                           }
                                           setState(() {});
                                         },
-                                        color:
-                                            widget.buttonColors[
-                                                index],
+                                        color: widget.buttonColors[index],
                                       );
                                     },
                                     onWillAccept: (data) {
-                                      return true;
+                                      return data != null;
                                     },
                                     onAccept: (data) {
-                                      widget.setButtonColor(
-                                          index, data);
+                                      widget.setButtonColor(index, data);
                                     },
                                   ),
                                   if (index != 4) const Spacer(),

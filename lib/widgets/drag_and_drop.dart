@@ -21,9 +21,14 @@ class _DragAndDropWidgetState extends State<DragAndDropWidget> {
   @override
   Widget build(BuildContext context) {
     return Draggable<String>(
-      data: widget.item,
+      data: widget.gameButtonWidget.color == CustomColors.gcEmpty.withOpacity(1)
+          ? null
+          : widget.item,
       feedback: Container(
-        child: widget.gameButtonWidget,
+        child:
+            widget.gameButtonWidget.color == CustomColors.gcEmpty.withOpacity(1)
+                ? null
+                : widget.gameButtonWidget,
       ),
       child: Container(
         child: widget.gameButtonWidget,
