@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mastermind/models/shadows.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../theme/colors.dart';
@@ -32,38 +33,15 @@ class GameButtonWidgetState extends State<GameButtonWidget> {
   bool get gameColorIsEmpty =>
       widget.color == CustomColors.gcEmpty.withOpacity(1);
 
-  final emptyBoxShadow = [
-    BoxShadow(
-      color: const Color(0x3C40434D).withOpacity(0.5),
-      blurRadius: 1.0,
-      spreadRadius: 1,
-    ),
-  ];
-
-  final filledBoxShadow = [
-    BoxShadow(
-      color: const Color(0x3C40434D).withOpacity(0.25),
-      blurRadius: 2.0,
-      spreadRadius: 0,
-      offset: const Offset(0, 1),
-    ),
-    BoxShadow(
-      color: const Color(0x3C404326).withOpacity(0.15),
-      blurRadius: 6.0,
-      spreadRadius: 2,
-      offset: const Offset(0, 2),
-    ),
-  ];
-
   Color get getColor => widget.hidden
       ? CustomColors.secondaryLight.withOpacity(1)
       : widget.color.withOpacity(1);
 
   List<BoxShadow> get getFilledBoxShadow =>
-      gameColorIsEmpty ? emptyBoxShadow : filledBoxShadow;
+      gameColorIsEmpty ? Shadows().getEmptyBoxShadow : Shadows().getFilledBoxShadow;
 
   List<BoxShadow> get getBoxShadow =>
-      widget.hidden ? filledBoxShadow : getFilledBoxShadow;
+      widget.hidden ? Shadows().getFilledBoxShadow : getFilledBoxShadow;
 
   get btnSize => widget.size ?? 40.0;
 

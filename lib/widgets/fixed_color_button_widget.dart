@@ -8,25 +8,10 @@ import 'game_button_widget.dart';
 class FixedColorWidgetState extends StatelessWidget {
   final List<FixedBtnModel> fixedBtns;
 
-  FixedColorWidgetState({
+  const FixedColorWidgetState({
     Key? key,
     required this.fixedBtns,
   }) : super(key: key);
-
-  final filledBoxShadow = [
-    BoxShadow(
-      color: const Color(0x3C40434D).withOpacity(0.25),
-      blurRadius: 2.0,
-      spreadRadius: 0,
-      offset: const Offset(0, 1),
-    ),
-    BoxShadow(
-      color: const Color(0x3C404326).withOpacity(0.15),
-      blurRadius: 6.0,
-      spreadRadius: 2,
-      offset: const Offset(0, 2),
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
