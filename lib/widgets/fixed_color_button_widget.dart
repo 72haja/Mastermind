@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mastermind/models/fixed_btn_model.dart';
 import 'package:mastermind/theme/colors.dart';
 import 'package:mastermind/widgets/answer_indicator_widget.dart';
-import 'package:mastermind/widgets/color_chose_button_widget.dart';
-import 'package:mastermind/widgets/my_arc.dart';
 
-import 'widgets.dart';
+import 'game_button_widget.dart';
 
 class FixedColorWidgetState extends StatelessWidget {
   final List<FixedBtnModel> fixedBtns;
@@ -32,7 +30,7 @@ class FixedColorWidgetState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Column(
         children: [

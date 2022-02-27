@@ -10,10 +10,9 @@ import 'package:mastermind/theme/colors.dart';
 import 'package:mastermind/widgets/game_box_widget.dart';
 import 'package:mastermind/widgets/stop_watch.dart';
 import 'package:mastermind/widgets/widgets.dart';
-import 'package:provider/provider.dart';
-import "dart:math";
 
 import '../widgets/color_chose_box_widget.dart';
+import '../widgets/game_button_widget.dart';
 
 class GameStatefulWidget extends StatefulWidget {
   final List<Color> allColors = [
@@ -39,8 +38,6 @@ class _GameStatefulWidgetState extends State<GameStatefulWidget> {
 
   late List<GameButtonWidget> hiddenChilds;
 
-  late String _gameState;
-
   final GlobalKey<StopWatchWidgetState> _keyStopWatchWidget = GlobalKey();
   final GlobalKey<GameBox> _keyGameBoxState = GlobalKey();
   List<GlobalKey<GameButtonWidgetState>> hiddenGameButtonKeys = [];
@@ -51,7 +48,6 @@ class _GameStatefulWidgetState extends State<GameStatefulWidget> {
     _controllerUserName = TextEditingController();
     _controllerPassword = TextEditingController();
     hiddenChilds = getHiddenChilds();
-    _gameState = "started";
   }
 
   @override
@@ -127,7 +123,6 @@ class _GameStatefulWidgetState extends State<GameStatefulWidget> {
       for (var key in hiddenGameButtonKeys) {
         key.currentState?.toggleHidden();
       }
-      _gameState = "finished";
       var time = _keyStopWatchWidget.currentState?.stopTimer();
       _keyGameBoxState.currentState?.setGameToFinished();
 
@@ -186,7 +181,7 @@ class _GameStatefulWidgetState extends State<GameStatefulWidget> {
                     fixedBtns: fixedBtnsArray,
                     callback: callback,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   Column(
                     children: [
                       Row(
@@ -234,6 +229,10 @@ class _GameStatefulWidgetState extends State<GameStatefulWidget> {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 10),
+                      Row(children: [
+                        ColorChoseBoxWidget(),
+                      ]),
                     ],
                   )
                 ],

@@ -8,6 +8,7 @@ import 'package:mastermind/widgets/widgets.dart';
 
 import 'color_chose_box_widget.dart';
 import 'color_chose_widget.dart';
+import 'game_button_widget.dart';
 
 class GameBoxWidget extends StatefulWidget {
   final List<Color> buttonColors;
@@ -176,9 +177,6 @@ class GameBox extends State<GameBoxWidget> {
               ),
             ],
           ),
-          Row(children: [
-            ColorChoseBoxWidget(),
-          ]),
           Row(
             children: [
               Expanded(

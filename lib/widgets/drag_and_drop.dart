@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mastermind/theme/colors.dart';
-import 'package:mastermind/widgets/widgets.dart';
+
+import 'game_button_widget.dart';
 
 class DragAndDropWidget extends StatefulWidget {
   final String item;
@@ -28,6 +29,7 @@ class _DragAndDropWidgetState extends State<DragAndDropWidget> {
         child: widget.gameButtonWidget,
       ),
       childWhenDragging: GameButtonWidget(
+        size: 30.0,
         hidden: false,
         onButtonClicked: () {},
         color: CustomColors.gcEmpty.withOpacity(1),
