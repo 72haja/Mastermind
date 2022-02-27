@@ -39,7 +39,6 @@ class _FriendsStatefulWidgetState extends State<FriendsStatefulWidget> {
   }
 
   callback(index) {
-    print("Callback fired");
     _keyFriendsWidgetState.currentState?.getLocalFriends();
     _keyFriendRequestsState.currentState?.getLocalRequestedFriendships();
     setState(() {});
@@ -63,7 +62,6 @@ class _FriendsStatefulWidgetState extends State<FriendsStatefulWidget> {
                 FriendsWidget(
                   key: _keyFriendsWidgetState,
                   onFriendsChanged: () {
-                    print("Changed");
                     _keyFriendsWidgetState.currentState?.getLocalFriends();
                     _keyFriendRequestsState.currentState
                         ?.getLocalRequestedFriendships();
@@ -72,7 +70,6 @@ class _FriendsStatefulWidgetState extends State<FriendsStatefulWidget> {
                 FriendRequests(
                   key: _keyFriendRequestsState,
                   onFriendsChanged: () {
-                    print("Changed");
                     _keyFriendsWidgetState.currentState?.getLocalFriends();
                     _keyFriendRequestsState.currentState
                         ?.getLocalRequestedFriendships();

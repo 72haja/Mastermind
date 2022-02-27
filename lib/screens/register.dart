@@ -163,7 +163,6 @@ class _RegisterStatefulWidgetState extends State<RegisterStatefulWidget> {
                                                 const MainView());
                                         Navigator.push(context, route);
                                       } catch (e) {
-                                        print("register not successfully");
 
                                         final snackBar = SnackBar(
                                           content: Text(e.toString()),
